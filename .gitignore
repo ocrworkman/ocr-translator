@@ -1,0 +1,33 @@
+# ---- 打包产物 / 大文件：绝对不要提交 ----
+build/
+dist/
+dist_fixed/
+*.spec.bak
+旧版备份*/
+
+# ---- 用户本地配置（含 Token / API Key，切勿提交）----
+config.json
+
+# ---- 日志与自检输出 ----
+*.log
+selftest.log
+
+# ---- Python 缓存 ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# ---- 本地私有文件 ----
+.workbuddy/
+*.bak
+*.tmp
+Thumbs.db
+desktop.ini
+
+# ---- 编辑器 ----
+.idea/
+.vscode/
+*.swp

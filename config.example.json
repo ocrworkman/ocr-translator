@@ -1,0 +1,38 @@
+{
+  "hotkeys": {
+    "capture_ocr": "ctrl+alt+o",
+    "capture_tts": "ctrl+alt+s"
+  },
+  "ocr": {
+    "url": "https://www.zndjs.cn:8888/ocr",
+    "token": "",
+    "method": 2,
+    "timeout": 30,
+    "upscale": 1.0,
+    "pdf_dpi": 200
+  },
+  "translate": {
+    "provider": "zndjs",
+    "zndjs_url": "http://www.zndjs.cn:9999/translate",
+    "zndjs_source": "auto",
+    "zndjs_target": "",
+    "openai_base_url": "",
+    "openai_api_key": "",
+    "openai_model": "gpt-4o-mini",
+    "auto_translate": false,
+    "target_lang": "English",
+    "system_prompt": "你是一个专业翻译引擎。将用户提供的文本翻译成{target_lang}。只输出译文本身，不要任何解释、注释或原文。保留原文的换行格式。如果文本已经是目标语言，原样输出。",
+    "google_target_code": "zh-CN"
+  },
+  "tts": {
+    "engine": "edge",
+    "voice": "auto",
+    "rate": "+0%",
+    "volume": "+0%",
+    "auto_read": "off",
+    "sapi_voice": ""
+  },
+  "ui": {
+    "theme": "dark"
+  }
+}
