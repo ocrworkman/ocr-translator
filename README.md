@@ -1,5 +1,9 @@
 # 识图翻译（截图 OCR 与翻译工具）
 
+[![Release v1.0.0](https://img.shields.io/badge/release-v1.0.0-blue)](https://github.com/ocrworkman/ocr-translator/releases/tag/v1.0.0)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](requirements.txt)
+
 常驻系统托盘，可截图框选、也可**批量导入图片 / PDF**，完成：
 
 - **文字识别（OCR）**：默认调用自建服务器 `https://www.zndjs.cn:8888/ocr`（9999 端口的 HTTP 版本是同一套服务），
@@ -12,7 +16,37 @@
 - **语音合成（TTS）**：Edge-TTS 在线语音（微软，音质好）或 Windows 本地 SAPI（离线）。
 - **逐条朗读**：列表里每一条任务的原文、译文都能单独朗读，朗读时按钮会变成「朗读中…」。
 
-## 安装与运行
+## ⬇️ 下载
+
+**Windows 用户**：前往 [Releases 页面](https://github.com/ocrworkman/ocr-translator/releases) 下载单文件 exe，
+**无需安装 Python**，双击即可运行。
+
+| 版本 | 文件 | 大小 | 说明 |
+| --- | --- | --- | --- |
+| v1.0.0 | [OCRTranslator-v1.0.0-Windows-x64.exe](https://github.com/ocrworkman/ocr-translator/releases/download/v1.0.0/OCRTranslator-v1.0.0-Windows-x64.exe) | 77.2 MB | Windows 10/11 64 位 |
+
+<details>
+<summary><b>校验文件完整性（可选）</b></summary>
+
+下载后可用 PowerShell 核对哈希值，确认文件未被篡改或下载损坏：
+
+```powershell
+Get-FileHash -Algorithm SHA256 ".\OCRTranslator-v1.0.0-Windows-x64.exe"
+```
+
+v1.0.0 的期望值：
+
+```
+SHA256: e55e5b2fdc8220ed689a7990de0b3ac1cf21a4be173350f1c8f6bac95a63281f
+大小  : 80957545 字节
+```
+
+</details>
+
+> ⚠️ 首次启动需解压到临时目录，稍慢属正常现象。Windows Defender 等杀毒软件可能误报单文件 exe，
+> 可按需将文件加入信任名单。程序**默认配置为占位值**，使用前请在设置里填入你可用的 OCR 与翻译服务。
+
+## 安装与运行（源码方式）
 
 ```bat
 pip install -r requirements.txt
@@ -135,6 +169,9 @@ python main.py --selftest
 - 运行日志写在 `error.log`。
 
 ## 打包为单个 exe（产物在 `dist\识图翻译.exe`）
+
+> 💡 二进制产物**不进 git 仓库**，统一通过 [Releases](https://github.com/ocrworkman/ocr-translator/releases)
+> 分发——避免仓库膨胀、拖慢他人 clone。发版时用 tag 锁定对应代码版本，便于追溯。
 
 **推荐**（自带 `dis` bug 兼容补丁，不会崩）：
 
